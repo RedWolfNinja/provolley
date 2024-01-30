@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPVVOLLEY - Идеальная Платформа для Волейболистов</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
 </head>
 <body>
 
@@ -16,8 +16,10 @@
     <main>
         <section id="upload_field">
             <h2>Загрузка</h2>
-            <input type="file" id="fileInput" multiple>
-            <button onclick="uploadFiles()">Загрузить файлы</button>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="files" multiple>
+                <button type="submit">Загрузить файлы</button>
+            </form>
             <div id="fileList"></div>
         </section>
 
@@ -26,6 +28,7 @@
     <footer>
         <p>&copy; 2024 RPVVOLLEY. Все права защищены.</p>
     </footer>
-    <script src="upload.js"></script>
+    <script src="static/upload.js"></script>
+    <script src="server.js"></script>
 </body>
 </html>
